@@ -1,0 +1,484 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 18px;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  color: #e5e5e5;
+}
+
+#lightbox {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  padding: 4px;
+  background-color: black;
+  border: 2px solid white;
+}
+
+#lightbox.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+body {
+  font-family: "Roboto";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  background-color: #1E1E1E;
+}
+
+body header {
+  width: 100px;
+  height: 100vh;
+  background-color: #101010;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header #logo-section {
+  height: 128px;
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #0B0B0B;
+}
+
+body header #logo-section .logo {
+  width: 60px;
+}
+
+body header #logo-section .logo-text {
+  margin-top: 0.4rem;
+  font-size: 1rem;
+}
+
+body header nav ul li {
+  list-style: none;
+  margin: 30px 0px 30px 0px;
+  text-align: center;
+}
+
+body header nav ul li a {
+  display: block;
+}
+
+body header nav ul li a .nav-icon {
+  width: 2.2rem;
+}
+
+body header nav ul li a .nav-icon path {
+  fill: #8B8B8B;
+}
+
+body header nav ul li .nav-links:hover .nav-icon path {
+  fill: #47BDFF;
+}
+
+body header nav ul li .nav-links.selected .nav-icon path {
+  fill: #47BDFF;
+}
+
+body header .buffer {
+  height: 128px;
+}
+
+body header .buffer .hamburger {
+  margin: auto;
+  display: none;
+}
+
+body header .buffer .hamburger .line {
+  width: 30px;
+  height: 3px;
+  border-radius: 3px;
+  margin: 5px;
+  background-color: white;
+}
+
+body #main-content {
+  width: calc(100vw - 100px);
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+
+body #main-content .content-section {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+body #main-content #home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #main-content #home #hero-text h1 {
+  margin-bottom: 1rem;
+}
+
+body #main-content #home #hero-text p {
+  color: #8B8B8B;
+  margin-bottom: 2rem;
+}
+
+body #main-content #home #hero-text .contact-button {
+  text-decoration: none;
+  color: #47BDFF;
+  border: 1px solid #47BDFF;
+  padding: 0.8rem 2rem;
+}
+
+body #main-content #home .hero-img {
+  width: 30%;
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+  margin-bottom: 7rem;
+}
+
+body #main-content #projects .gallery {
+  padding: 0rem 1rem;
+  padding-top: 0.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (32vh)[3];
+      grid-template-rows: repeat(3, 32vh);
+  -webkit-column-gap: 0.5rem;
+          column-gap: 0.5rem;
+  row-gap: 0.5rem;
+}
+
+body #main-content #projects .gallery .gallery-item .gallery-img {
+  height: 100%;
+  width: 100%;
+  -o-object-position: top;
+     object-position: top;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+body #main-content #about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 5rem;
+}
+
+body #main-content #about .about-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0rem 3rem;
+}
+
+body #main-content #about .about-text h1 {
+  text-align: left;
+}
+
+body #main-content #about .about-text p {
+  text-align: left;
+}
+
+body #main-content #contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #main-content #contact .contact-box {
+  width: 85%;
+  height: 60%;
+  border: 6px solid #47BDFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #main-content #contact .contact-box .vl {
+  width: 6px;
+  height: 80%;
+  background-color: #47BDFF;
+}
+
+body #main-content #contact .contact-box .contact-me {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #main-content #contact .contact-box .contact-me h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+body #main-content #contact .contact-box .contact-me p {
+  text-align: center;
+  color: #e5e5e5;
+  margin-bottom: 2rem;
+}
+
+body #main-content #contact .contact-box .contact-me .email-button {
+  display: block;
+  color: #e5e5e5;
+  font-size: 1.3rem;
+  background-color: #FF4747;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5rem 4rem;
+  border-radius: 8px;
+}
+
+body #main-content #contact .contact-box .follow-me {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+
+body #main-content #contact .contact-box .follow-me h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+body #main-content #contact .contact-box .follow-me .social-menu .social-link {
+  display: block;
+  text-decoration: none;
+  color: #e5e5e5;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+body #main-content #contact .contact-box .follow-me .social-menu .social-link svg {
+  width: 2.2rem;
+  -webkit-transform: translateY(0.4rem);
+          transform: translateY(0.4rem);
+  margin-right: 0.8rem;
+}
+
+body #main-content #contact .contact-box .follow-me .social-menu .social-link svg path {
+  fill: #e5e5e5;
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 14px;
+  }
+  body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  body header {
+    height: 80px;
+    width: 100vw;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  body header #logo-section {
+    height: 100%;
+  }
+  body header #logo-section .logo {
+    z-index: 2;
+    width: 30px;
+  }
+  body header #logo-section .logo-text {
+    display: none;
+  }
+  body header nav {
+    z-index: 1;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0%;
+    left: 0%;
+    background-color: #0B0B0B;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -10%);
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    pointer-events: none;
+  }
+  body header nav ul {
+    height: 60vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body header .buffer {
+    margin-right: 8%;
+    height: auto;
+    z-index: 5;
+  }
+  body header .buffer .hamburger {
+    display: block;
+  }
+  body header nav.open {
+    clip-path: circle(1200px at 90% -10%);
+    -webkit-clip-path: circle(1200px at 90% -10%);
+    pointer-events: all;
+  }
+  body #main-content {
+    width: 100vw;
+    height: calc(100vh - 80px);
+  }
+  body #main-content .content-section {
+    height: calc(100vh - 80px);
+  }
+  body #main-content #home {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  body #main-content #home .hero-img {
+    margin-top: 7rem;
+    width: 45%;
+    max-width: 260px;
+  }
+  body #main-content #projects .gallery {
+    -ms-grid-rows: (calc(calc(97vh - 80px)/3))[3];
+        grid-template-rows: repeat(3, calc(calc(97vh - 80px)/3));
+  }
+  body #main-content #about {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin: 0;
+  }
+  body #main-content #about .about-text {
+    padding: 0 2rem;
+  }
+  body #main-content #contact .contact-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 90%;
+  }
+  body #main-content #contact .contact-box .contact-me p {
+    width: 90%;
+  }
+  body #main-content #contact .contact-box .vl {
+    width: 80%;
+    height: 6px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
